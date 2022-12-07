@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-
+import YoutubeList from './components/youtube/YoutubeList';
+import { data } from './ytbData';
+import Toggle from './components/state/Toggle';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+      <Toggle></Toggle>
+      <YoutubeList data={data}></YoutubeList>
+      </div>
     </div>
   );
 }
