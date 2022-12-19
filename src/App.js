@@ -5,10 +5,7 @@ import Toggle from './components/state/Toggle';
 function App() {
   return (
     <div className="App">
-      <div>
-      <Toggle></Toggle>
       <YoutubeList data={data}></YoutubeList>
-      </div>
     </div>
   );
 }

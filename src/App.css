@@ -1,6 +1,9 @@
 .App {
   padding: 0;
   margin: 0;
+}
+
+.ytb-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
@@ -35,4 +38,8 @@
 }
 .youtube-author {
   font-size: 14;
+}
+.bt-addItem {
+  display: block;
+  font-size: 40px;
 }
