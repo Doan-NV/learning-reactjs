@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import YoutubeComponent from './YoutubeComponent';
+import FormComponent from '../handingForm/FormComponent';
 const YoutubeList = (props) => {
     const { data } = props;
     // const [state, setState] = useState(data); // deep copy
@@ -30,6 +31,8 @@ const YoutubeList = (props) => {
             img: "https://loremflickr.com/320/240",
             views: 123
         }])
+        setInput1("")
+        setInput2("")
         // listData.push(input);
     }
     const handleInput1Change = (event) => {
@@ -39,20 +42,13 @@ const YoutubeList = (props) => {
     const handleInput2Change = (event) => {
         setInput2(event.target.value)
     }
+    const propsToForm = {handleSubmit, handleInput1Change, handleInput2Change, input1, input2}
     return (
         <>
             <div className='ytb-list'>
                 {listData.map((item) => { return <YoutubeComponent item={item} key={item.id}></YoutubeComponent> })}
             </div>
-            {/* <button className='bt-addItem' onClick={addItem}>add item</button> */}
-            <form className="container mb-4 mt-4" onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <input type="text" className="form-control" id="exampleInputEmail12" aria-describedby="emailHelp" placeholder="asdasdasd" value={input1} onChange={handleInput1Change} ></input>
-                    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text" value={input2} onChange={handleInput2Change} ></input>
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            <FormComponent propsToForm={propsToForm}></FormComponent>
         </>
 
     )
